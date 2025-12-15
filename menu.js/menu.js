@@ -12,18 +12,21 @@ function addBurger() {
   burgers.push(newBurger);
 }
 
+// Call the function to add the burger
+addBurger();
+
 // ----------------------------
 // Block-Scoped Variable & Function
 // ----------------------------
-if (true) { // this block always executes
+if (true) {
   const anotherNewBurger = 'Maple Bacon Burger'; // block-scoped variable
   burgers.push(anotherNewBurger);
 
-  function changeFeaturedDrink() { // function inside block
+  function changeFeaturedDrink() {
     featuredDrink = 'The JavaShake';
   }
 
-  changeFeaturedDrink(); // call function to update drink
+  changeFeaturedDrink();
 }
 
 // ----------------------------
@@ -32,17 +35,22 @@ if (true) { // this block always executes
 
 // Display burgers in a list
 const burgerList = document.getElementById('burger-list');
-burgers.forEach(burger => {
-  const li = document.createElement('li');
-  li.textContent = burger;
-  burgerList.appendChild(li);
-});
+if (burgerList) {
+  burgers.forEach(burger => {
+    const li = document.createElement('li');
+    li.textContent = burger;
+    burgerList.appendChild(li);
+  });
+}
 
 // Display featured drink
-document.getElementById('drink').textContent = featuredDrink;
+const drinkElement = document.getElementById('drink');
+if (drinkElement) {
+  drinkElement.textContent = featuredDrink;
+}
 
 // ----------------------------
-// Optional Test in Console
+// Console output for testing
 // ----------------------------
 console.log("Burgers:", burgers);
 console.log("Featured Drink:", featuredDrink);
