@@ -1,4 +1,7 @@
-test('dummy test so Jest runs', () => {
-    expect(true).toBe(true);
+const assert = require('assert');
+
+describe('Dummy test', function() {
+  it('should pass', function() {
+    assert.strictEqual(true, true);
   });
-  
+});
