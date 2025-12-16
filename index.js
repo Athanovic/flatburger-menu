@@ -1,3 +1,4 @@
+
 const burgers = ['Hamburger', 'Cheeseburger'];
 let featuredDrink = 'Strawberry Milkshake';
 
@@ -13,6 +14,4 @@ if(true) {
   function changeFeaturedDrink() {
     featuredDrink = 'The JavaShake';
   }
-
-  changeFeaturedDrink();
 }
